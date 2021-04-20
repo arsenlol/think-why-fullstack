@@ -1,0 +1,25 @@
+<h1 class="text-center">
+  <span>Create new Contact:</span>
+</h1>
+<form [formGroup]="form" class="common-form" fxLayout="column" fxLayoutGap="20px">
+  <mat-form-field appearance="outline">
+    <mat-label>Email</mat-label>
+    <input formControlName="email" matInput placeholder="email@gmail.com" />
+    <mat-error *ngIf="form.get('email').hasError('email')">Email must be valid</mat-error>
+    <mat-error *ngIf="form.get('email').hasError('required')">Email is required</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>First name</mat-label>
+    <input formControlName="first-name" matInput placeholder="Abraham" />
+    <mat-error *ngIf="form.get('first-name').hasError('required')">First name is required</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Last name</mat-label>
+    <input formControlName="last-name" matInput placeholder="Linkoln" />
+    <mat-error *ngIf="form.get('last-name').hasError('required')">Last name is required</mat-error>
+  </mat-form-field>
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <button mat-raised-button routerLink="/list">Back</button>
+    <button mat-raised-button color="primary" (click)="create()">Create</button>
+  </div>
+</form>

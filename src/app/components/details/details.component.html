@@ -1,0 +1,9 @@
+<button mat-raised-button routerLink="/list">Back</button>
+<br>
+<br>
+<section *ngIf="contact">
+  <h3>{{contact["first-name"]}} {{contact["last-name"]}}</h3>
+
+  <div><b>ID:</b>&nbsp;<span>{{contact["record-ID"]}}</span></div>
+  <div><b>Email:</b>&nbsp;<a href="mailto:{{contact.email}}">{{contact.email}}</a></div>
+</section>
